@@ -1,10 +1,10 @@
 package com.test.todolistapp.todoapplication.ui
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.todoapplication.data.db.TodoData
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
@@ -102,21 +102,21 @@ class AddTodoActivity : AppCompatActivity() {
                 setResult(RESULT_OK, intent)
                 finish()
             } else {
-                Toast.makeText(this@AddTodoActivity, "Please add todo or click cancel", Toast.LENGTH_LONG)
+                Toast.makeText(
+                    this@AddTodoActivity,
+                    "Please add todo or click cancel",
+                    Toast.LENGTH_LONG
+                )
                     .show()
                 return@setOnClickListener
             }
         }
 
-        /*  binding.btnClose.setOnClickListener {
-              var intent = Intent()
-              intent.putExtra("todo", oldTodo)
-              intent.putExtra("delete_todo", true)
-              setResult(RESULT_OK, intent)
-              finish()
-          }*/
+        binding.btnClose.setOnClickListener {
+            finish()
+        }
 
-        binding.toolbar.imgBack.setOnClickListener { onBackPressed() }
+        binding.toolbar.imgBack.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
 
     }
 }
