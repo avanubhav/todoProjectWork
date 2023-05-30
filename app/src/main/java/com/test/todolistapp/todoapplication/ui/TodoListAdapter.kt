@@ -20,10 +20,6 @@ class TodoListAdapter(private val context: Context, val listener: TodoClickListe
         return ToDoItemViewHolder(binding)
     }
 
-    fun deleteList(position: Int){
-        notifyDataSetChanged()
-    }
-
     override fun onBindViewHolder(holder: ToDoItemViewHolder, position: Int) {
         val item = todoList[position]
 
